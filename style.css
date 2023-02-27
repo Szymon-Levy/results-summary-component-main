@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+:root{
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+    --radius: 30px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 1.7rem;
+    line-height: 1.3;
+    font-weight: 500;
+    padding: 1.5rem;
+    color: var(--Light-lavender)
+}
+
+ul{
+    list-style: none;
+}
+
+.card-wrapper{
+    border-radius: var(--radius);
+    box-shadow: 10px 10px 80px -30px var(--Light-lavender);
+    width: 100%;
+    max-width: 738px;
+    margin-inline: auto;
+}
+
+.result{
+    background-image: linear-gradient(0deg, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
+    border-radius: var(--radius);
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.card-title{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.circle{
+    width: 14rem;
+    height: 14rem;
+    background-image: linear-gradient(0deg, hsla(241, 72%, 46%, 0), hsla(256, 72%, 46%, 1));
+    border-radius: 50%;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle .score{
+    font-weight: 800;
+    font-size: 5.7rem;
+    line-height: 1;
+    color: var(--White);
+}
+
+.result .grade{
+    font-size: 2.2rem;
+    padding-bottom: .5rem;
+    font-weight: 700;
+    color: var(--White);
+}
+
+button{
+    width: 100%;
+    border: none;
+    background-color: var(--Dark-gray-blue);
+    border-radius: 100vmax;
+    color: var(--White);
+    font-family: inherit;
+    font-weight: 700;
+    height: 57px;
+    line-height: 57px;
+    font-size: 18px;
+    transition: background-color .6s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+button::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(0deg, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
+    z-index: -1;
+}
+
+button:hover{
+    background-color: transparent;
+}
+
+.summary{
+    padding: 3rem;
+}
+
+.summary__title{
+    color: var(--Dark-gray-blue);
+}
+
+.stats{
+    padding: 3rem 0;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.stats li{
+    padding: 15px;
+    border-radius: .7em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stats li .title{
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.stats li .title span{
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.stats li .points strong{
+    color: var(--Dark-gray-blue);
+}
+
+.stats li .points span{
+    color: hsl(224, 30%, 65%);
+}
+
+.stats li:nth-child(1){
+    background-color: hsla(0, 100%, 67%, 6%);
+}
+
+.stats li:nth-child(1) .title span{
+    color: var(--Light-red);
+}
+
+.stats li:nth-child(2){
+    background-color: hsla(39, 100%, 56%, 6%);
+}
+
+.stats li:nth-child(2) .title span {
+    color: var(--Orangey-yellow);
+}
+
+.stats li:nth-child(3){
+    background-color: hsla(166, 100%, 37%, 6%);
+}
+
+.stats li:nth-child(3) .title span {
+    color: var(--Green-teal);
+}
+
+.stats li:nth-child(4){
+    background-color: hsla(234, 85%, 45%, 6%);
+}
+
+.stats li:nth-child(4) .title span {
+    color: var(--Cobalt-blue);
+}
+
+/*--------Breakpoints---------*/
+
+@media screen and (min-width: 767px) {
+    body{
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        font-size: 1.8rem;
+    }
+
+    .card-wrapper{
+        display: flex;
+    }
+
+    .card-wrapper > div{
+        flex: 0 0 50%;
+    }
+
+    .card-title {
+        font-size: 2.4rem;
+    }
+
+    .result {
+        padding: 4.5rem 6rem;
+    }
+
+    .circle {
+        width: 20rem;
+        height: 20rem;
+        margin: 3.5rem auto;
+    }
+
+    .circle .score {
+        font-size: 7.1rem;
+    }
+
+    .result .grade {
+        font-size: 3.2rem;
+        padding-bottom: 2rem;
+    }
+
+    .summary {
+        padding: 4rem;
+    }
+
+    .stats {
+        padding: 3.5rem 0;
+    }
+
+    .stats li {
+        padding: 17px 20px;
+    }
+}
